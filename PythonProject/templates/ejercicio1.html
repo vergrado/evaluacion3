@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Ejercicio 1: Promedio y Estado</h1>
+        <form method="POST">
+            <label for="nota1">Nota 1:</label>
+            <input type="number" name="nota1" min="10" max="70" required><br>
+
+            <label for="nota2">Nota 2:</label>
+            <input type="number" name="nota2" min="10" max="70" required><br>
+
+            <label for="nota3">Nota 3:</label>
+            <input type="number" name="nota3" min="10" max="70" required><br>
+
+            <label for="asistencia">Asistencia (%):</label>
+            <input type="number" name="asistencia" min="0" max="100" required><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% if promedio %}
+            <div class="result">
+                <p>Promedio: {{ promedio }}</p>
+                <p>Estado: {{ estado }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
